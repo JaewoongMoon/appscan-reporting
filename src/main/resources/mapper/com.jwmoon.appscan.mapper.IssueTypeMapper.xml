@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jwmoon.appscan.mapper.IssueTypeMapper">
+    <select id="selectIssueTypes" resultType="IssueType" >  
+    <![CDATA[ 
+       SELECT a.ENGINEID as engineId, 
+       		  a.NAME as name, 
+       		  a.INVASIVE as invasive, 
+       		  a.SEVERITY as severity, 
+       		  a.THREATCLASS as threatClass, 
+       		  a.THREATCLASSREFERENCE as threatClassReference, 
+       		  a.REMEDIATIONTYPEID as remediationTypeId, 
+       		  a.TESTTYPE as testType, 
+       		  a.SHORTNAME as shortName, 
+       		  a.ID as id, 
+       		  a.CVEID as cveId, 
+       		  a.CWEID as cweId
+		FROM ASSTD_ISSUETYPES a
+    ]]>
+    </select>
+ 
+</mapper>

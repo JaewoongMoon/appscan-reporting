@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jwmoon.appscan.mapper.IssueMapper">
+
+	<sql id="selectDefaultIssues">
+		SELECT a.ENTITYNAME as entityName, 
+       		  a.FILEID as fileId, 
+       		  a.REMEDIATIONTYPEID as remediationTypeId, 
+       		  a.ENTITYTYPE as entityType, 
+       		  a.ENTITYID as entityId, 
+              a.ISSUETYPEID as issueTypeId, 
+              a.SEVERITY as severity, 
+              a.STATE as state, 
+              a.ISMANUAL as isManual, 
+              a.DEFAULTTIP as defaultIp, 
+              a.CVSSACCESSVECTOR as cvssAccessVector, 
+              a.CVSSACCESSCOMPLEXITY as cvssAcessComplexity, 
+              a.CVSSAUTHENTICATION as cvssAuthentication, 
+              a.CVSSCONFIDENTIALITYIMPACT as cvssConfidentialityImpact, 
+              a.CVSSINTEGRITYIMPACT as cvssIntegrityImpact, 
+              a.CVSSAVAILABILITYIMPACT as cvssAvailabilityImpact, 
+              a.CVSSEXPLOITABILITY as cvssExploitability, 
+              a.CVSSREMEDIATIONLEVEL as cvssRemediationLevel, 
+              a.CVSSREPORTCONFIDENCE as cvssReportConfidence, 
+              a.CVSSCOLLATERALDAMAGEPOTENTIAL as cvssCollateralDamagePotential, 
+              a.CVSSTARGETDISTRIBUTION as cvssTargetDistribution, 
+              a.CVSSCONFIDENTIALITYREQUIREMENT as cvssConfidentialityRequirement, 
+              a.CVSSINTEGRITYREQUIREMENT as cvssIntegrityRequirement, 
+              a.CVSSAVAILABILITYREQUIREMENT as cvssAvailabilityRequirement, 
+              a.CVSSISMANUAL as cvssIsManual
+          FROM ASSTD_ISSUES a,
+               ASSTD_FILES b
+          WHERE a.FILEID = b.ID
+           and b.VIEWTYPE = 0
+	</sql>
+
+	
+    <select id="selectIssues" resultType="Issue" >  
+		<include refid="selectDefaultIssues" />
+		<if test="serviceType == 'DBMS'">
+		</if>
+    </select>
+    
+    <select id="getIssueCountBySeverity" resultType="Map" >
+    SELECT a.severity,
+    	count(a.severity)
+	FROM (
+           <include refid="selectDefaultIssues" />
+         )a
+	group by severity
+    </select>
+    
+    <select id="getIssueCountByIssueType" resultType="Map" >
+	select a.issueTypeID, 
+		   a.CNT, 
+		   b.NAME
+	  from 
+	    (SELECT a.issueTypeID, count(a.ISSUETYPEID) as CNT
+	    FROM (
+            <include refid="selectDefaultIssues" />
+              )a
+	    group by a.issueTypeID
+	    )a,
+	    (SELECT a.ID, a.NAME
+	       FROM ASSTD_ISSUETYPES a
+	     )b
+	where a.issueTypeID = b.ID
+	</select>
+	
+
+</mapper>

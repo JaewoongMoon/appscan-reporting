@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
+
+	<mvc:annotation-driven validator="validator" />
+	<context:component-scan base-package="com.jwmoon" use-default-filters="false">
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"></context:include-filter>
+	</context:component-scan>
+
+
+	<!-- Properties Files -->
+	<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath:properties/common.properties</value>
+			</list>
+		</property>
+	</bean>
+
+	<mvc:resources mapping="/css/**" location="/css/" />
+	<mvc:resources mapping="/js/**" location="/js/" />
+	<mvc:resources mapping="/image/**" location="/image/" />
+
+
+	<!-- INTERCEPTOR -->
+	<!-- 
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/**"/>
+			<bean class="com.aegiswall.official.interceptor.ParameterInterceptor"/>
+		</mvc:interceptor>
+		<mvc:interceptor>
+			<mvc:mapping path="/**"/>
+			<bean class="com.aegiswall.official.interceptor.MessageArgumentInterceptor"/>
+		</mvc:interceptor>
+		 <mvc:interceptor>
+			<mvc:mapping path="/**"/>
+			<bean class="com.aegiswall.official.interceptor.HeaderIntercepter"/>
+		</mvc:interceptor>
+	</mvc:interceptors>
+	 -->
+ 
+	<!-- RESOLVING JSP VIEWS -->
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+		<property name="prefix" value="/WEB-INF/jsp/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+
+	<!-- HIBERNATE VALIDATOR -->
+	<bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean" >
+       	<property name="validationMessageSource" ref="messageSource" />
+   	</bean>
+
+	<!-- EXCEPTION -->
+	<bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+    	<property name="defaultErrorView" value="error"></property>
+    </bean>
+
+</beans>

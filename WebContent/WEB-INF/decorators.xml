@@ -1,0 +1,10 @@
+<decorators defaultdir="/WEB-INF/jsp/decorators">
+    <excludes>
+    	<pattern>/*.html</pattern>
+    </excludes>
+
+    <decorator name="baseDecorator" page="/WEB-INF/jsp/decorators/baseDecorator.jsp">
+		<pattern>/*</pattern>
+	</decorator>
+	
+</decorators>

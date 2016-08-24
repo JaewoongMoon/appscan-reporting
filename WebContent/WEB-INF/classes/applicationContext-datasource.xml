@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:aop="http://www.springframework.org/schema/aop"
+	   xmlns:tx="http://www.springframework.org/schema/tx"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	   http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
+	   http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd">
+
+	<!-- Properties Files -->
+	<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath:properties/jdbc.properties</value>
+			</list>
+		</property>
+	</bean>
+	<!-- ***************************************************************** -->
+	<!-- Project 관리용 DB 세팅 -->
+	<bean id="projectDataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close" >
+		<property name="driverClassName" value="${jdbc.project.driverClassName}"/>
+		<property name="url" value="${jdbc.project.url}"/>
+		<property name="username" value="${jdbc.project.username}"/>
+		<property name="password" value="${jdbc.project.password}"/>
+		<property name="initialSize" value="${jdbc.initialSize}"/>
+		<property name="maxActive" value="${jdbc.maxActive}"/>
+		<property name="minIdle" value="${jdbc.initialSize}"/>
+		<property name="maxWait" value="${jdbc.maxWait}"/>
+		<property name="poolPreparedStatements" value="true"></property>
+		<property name="maxOpenPreparedStatements" value="50"></property>
+		<property name="validationQuery" value="select 1"></property>
+	</bean>	
+	
+	<!-- Transaction manager for a single JDBC DataSource -->
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="projectDataSource"/>
+	</bean>
+	<!-- Annotation support for transaction -->
+	<tx:annotation-driven transaction-manager="transactionManager"/>
+	
+    <!-- SqlSessionFactory -->
+    <bean id="projectSqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="projectDataSource" />
+        <property name="configLocation" value="classpath:mybatis-project-config.xml"></property>
+		<property name="mapperLocations" value="classpath:mapper/project/*.xml"></property>
+    </bean>
+    
+    <!-- Mapper Scanner -->
+    <bean id="projectMapperScanner" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.jwmoon.framework.project"/>
+        <property name="sqlSessionFactoryBeanName" value="projectSqlSessionFactory" />
+    </bean>
+	
+	
+	<!-- ***************************************************************** -->
+	<!-- APP SCAN 용 DB 세팅 -->
+ 	<!-- dbContextHolder -->
+ 	<bean id="appscanDBContextHolder" scope="session" class="com.jwmoon.framework.db.AppscanDBContextHolder">
+ 		<aop:scoped-proxy proxy-target-class="true"/>
+ 	</bean> 
+	
+	<!-- DataSource Configuration -->
+	<bean id="parentDataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close" abstract="true">
+		<property name="driverClassName" value="${jdbc.driverClassName}"/>
+		<property name="username" value="${jdbc.username}"/>
+		<property name="password" value="${jdbc.password}"/>
+		<property name="initialSize" value="${jdbc.initialSize}"/>
+		<property name="maxActive" value="${jdbc.maxActive}"/>
+		<property name="minIdle" value="${jdbc.initialSize}"/>
+		<property name="maxWait" value="${jdbc.maxWait}"/>
+		<property name="poolPreparedStatements" value="true"></property>
+		<property name="maxOpenPreparedStatements" value="50"></property>
+		<property name="validationQuery" value="select 1 from rdb$database"></property>
+	</bean>
+	
+	<bean id="dataSource1" parent="parentDataSource" >
+		<property name="url" value="${jdbc.url}"/>
+	</bean>
+	
+	<bean id="dataSource2" parent="parentDataSource">
+		<property name="url" value="jdbc:firebirdsql:localhost/3050:D:/resultdb/elsword/elsword-RESULTSDB.FDB?encoding=UTF-8"/>
+	</bean>
+	
+	<!-- DataSource 라우팅 용 -->
+	<bean id="dataSource" class="com.jwmoon.framework.db.AppscanDBRoutingDataSource">
+		<property name="targetDataSources">
+			<map key-type="com.jwmoon.framework.db.AppscanDBContext">
+				<entry key="JINROH" value-ref="dataSource1" />
+				<entry key="ELSWORD" value-ref="dataSource2" />
+			</map>
+		</property>
+		<property name="defaultTargetDataSource" ref="dataSource1" />
+	</bean>
+
+    <!-- SqlSessionFactory -->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+        <property name="configLocation" value="classpath:mybatis-config.xml"></property>
+		<property name="mapperLocations" value="classpath:mapper/*.xml"></property>
+    </bean>
+    
+    <!-- Mapper Scanner -->
+    <bean id="appscanMapperScanner" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.jwmoon.appscan.mapper"/>
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
+    </bean>
+	
+</beans>

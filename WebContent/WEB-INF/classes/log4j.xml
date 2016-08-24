@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<!-- Logging levels are:                                  -->  
+<!-- DEBUG < INFO < WARN < ERROR < FATAL                  -->  
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+	<appender name="console" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss} [%-5p](%-30c{1}) %m%n" />
+		</layout>
+	</appender>
+	<appender name="file" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="c:/log/appscan.log"/>
+		<param name="Append" value="true"/>
+		<param name="ImmediateFlush" value="true"/>
+		<param name="DatePattern" value="'.'yyyy-MM-dd"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss} %m%n"/>
+		</layout>
+	</appender>
+	<!-- 매 날짜별 로그 파일 남기기 -->
+	<appender name="filelog" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="file" value="c:/log/newlog.log" />
+		<param name="Append" value="true"/>
+		<param name="DataPattern" value="'.'yyyy-MM-dd" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %-5p [%t] %-17c{2} (%13F:%L) %3x - %m%n" />
+		</layout>
+	</appender>
+	
+	<logger name="access.filter" additivity="false">
+		<level value="DEBUG"/>
+		<appender-ref ref="access"/>
+	</logger>
+	<logger name="org.quartz.core">
+		<level value="DEBUG"/>
+	</logger>
+	<logger name="java.sql">
+		<level value="DEBUG" />
+	</logger>
+	<root>
+		<level value="DEBUG" />
+		<appender-ref ref="console" />
+		<appender-ref ref="file" />
+		<!-- <appender-ref ref="filelog" /> -->
+	</root>
+</log4j:configuration>

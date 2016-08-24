@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jwmoon.appscan.mapper.IssueUrlMapper">
+    
+	<select id="selectIssueUrls" resultType="IssueUrl" >
+	SELECT a.ID as id,
+               a.FILENAME as fileName,
+               a.PARENTID as parentId,
+               a.NISSUES as nIssues, 
+               a.NREMEDIATIONS as nRemediations,
+               a.NVARIANTS as nVariants,
+               a.VIEWTYPE as viewType,
+               a.NVISITEDLINKS as nVisitedLinks, 
+               a.NFAILEDREQUESTS as nFailedRequests,
+	       b.PATH || b.NAME || a.FILENAME as fullPath
+	FROM ASSTD_FILES a,
+	     ASSTD_DIRS b
+	where a.NISSUES != 0
+	 and a.viewtype = 0
+	 and a.PARENTID = b.ID
+	</select>	 
+	
+	<select id="getIssueUrlCounts" resultType="Integer" parameterType="IssueUrl">
+	SELECT count(*) 
+	FROM ASSTD_FILES a,
+	     ASSTD_DIRS b
+        WHERE a.viewtype = 0 
+         <choose>
+             <when test="nIssues != null and nIssues eq 0" >
+	    and  a.NISSUES = 0
+             </when>
+             <otherwise>
+            and  a.NISSUES != 0
+             </otherwise>
+         </choose>
+	 and a.PARENTID = b.ID
+	</select>
+		 
+</mapper>
