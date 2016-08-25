@@ -1,0 +1,400 @@
+
+main/java/com/jwmoon/appscan/model/Issue.java,5743
+public class Issue 19,355
+    private String entityName;Issue.entityName21,377
+    private String fileId;Issue.fileId22,409
+    private String remediationTypeId;Issue.remediationTypeId23,437
+    private String entityType;Issue.entityType24,476
+    private String entityId;Issue.entityId25,508
+    private String issueTypeId;Issue.issueTypeId26,538
+    private String severity;Issue.severity27,571
+    private String state;Issue.state28,601
+    private String isManual;Issue.isManual29,628
+    private String defaultIp;Issue.defaultIp30,658
+    private String cvssAccessVector;Issue.cvssAccessVector31,689
+    private String cvssAcessComplexity;Issue.cvssAcessComplexity32,727
+    private String cvssAuthentication;Issue.cvssAuthentication33,768
+    private String cvssConfidentialityImpact;Issue.cvssConfidentialityImpact34,808
+    private String cvssIntegrityImpact;Issue.cvssIntegrityImpact35,855
+    private String cvssAvailabilityImpact;Issue.cvssAvailabilityImpact36,896
+    private String cvssExploitability;Issue.cvssExploitability37,940
+    private String cvssRemediationLevel;Issue.cvssRemediationLevel38,980
+    private String cvssReportConfidence;Issue.cvssReportConfidence39,1022
+    private String cvssCollateralDamagePotential;Issue.cvssCollateralDamagePotential40,1064
+    private String cvssTargetDistribution;Issue.cvssTargetDistribution41,1115
+    private String cvssConfidentialityRequirement;Issue.cvssConfidentialityRequirement42,1159
+    private String cvssIntegrityRequirement;Issue.cvssIntegrityRequirement43,1211
+    private String cvssAvailabilityRequirement;Issue.cvssAvailabilityRequirement44,1257
+    private String cvssIsManual;Issue.cvssIsManual45,1306
+    public final String getEntityName(Issue.getEntityName52,1438
+    public final void setEntityName(Issue.setEntityName61,1641
+    public final String getFileId(Issue.getFileId70,1845
+    public final void setFileId(Issue.setFileId79,2028
+    public final String getRemediationTypeId(Issue.getRemediationTypeId88,2238
+    public final void setRemediationTypeId(Issue.setRemediationTypeId97,2476
+    public final String getEntityType(Issue.getEntityType106,2716
+    public final void setEntityType(Issue.setEntityType115,2919
+    public final String getEntityId(Issue.getEntityId124,3127
+    public final void setEntityId(Issue.setEntityId133,3320
+    public final String getIssueTypeId(Issue.getIssueTypeId142,3526
+    public final void setIssueTypeId(Issue.setIssueTypeId151,3734
+    public final String getSeverity(Issue.getSeverity160,3946
+    public final void setSeverity(Issue.setSeverity169,4139
+    public final String getState(Issue.getState178,4333
+    public final void setState(Issue.setState187,4511
+    public final String getIsManual(Issue.getIsManual196,4699
+    public final void setIsManual(Issue.setIsManual205,4892
+    public final String getDefaultIp(Issue.getDefaultIp214,5094
+    public final void setDefaultIp(Issue.setDefaultIp223,5292
+    public final String getCvssAccessVector(Issue.getCvssAccessVector232,5512
+    public final void setCvssAccessVector(Issue.setCvssAccessVector241,5745
+    public final String getCvssAcessComplexity(Issue.getCvssAcessComplexity250,5999
+    public final void setCvssAcessComplexity(Issue.setCvssAcessComplexity259,6247
+    public final String getCvssAuthentication(Issue.getCvssAuthentication268,6511
+    public final void setCvssAuthentication(Issue.setCvssAuthentication277,6754
+    public final String getCvssConfidentialityImpact(Issue.getCvssConfidentialityImpact286,7028
+    public final void setCvssConfidentialityImpact(Issue.setCvssConfidentialityImpact295,7306
+    public final String getCvssIntegrityImpact(Issue.getCvssIntegrityImpact304,7596
+    public final void setCvssIntegrityImpact(Issue.setCvssIntegrityImpact313,7844
+    public final String getCvssAvailabilityImpact(Issue.getCvssAvailabilityImpact322,8116
+    public final void setCvssAvailabilityImpact(Issue.setCvssAvailabilityImpact331,8379
+    public final String getCvssExploitability(Issue.getCvssExploitability340,8655
+    public final void setCvssExploitability(Issue.setCvssExploitability349,8898
+    public final String getCvssRemediationLevel(Issue.getCvssRemediationLevel358,9162
+    public final void setCvssRemediationLevel(Issue.setCvssRemediationLevel367,9415
+    public final String getCvssReportConfidence(Issue.getCvssReportConfidence376,9687
+    public final void setCvssReportConfidence(Issue.setCvssReportConfidence385,9940
+    public final String getCvssCollateralDamagePotential(Issue.getCvssCollateralDamagePotential394,10230
+    public final void setCvssCollateralDamagePotential(Issue.setCvssCollateralDamagePotential403,10528
+    public final String getCvssTargetDistribution(Issue.getCvssTargetDistribution412,10840
+    public final void setCvssTargetDistribution(Issue.setCvssTargetDistribution421,11103
+    public final String getCvssConfidentialityRequirement(Issue.getCvssConfidentialityRequirement430,11403
+    public final void setCvssConfidentialityRequirement(Issue.setCvssConfidentialityRequirement439,11706
+    public final String getCvssIntegrityRequirement(Issue.getCvssIntegrityRequirement448,12026
+    public final void setCvssIntegrityRequirement(Issue.setCvssIntegrityRequirement457,12299
+    public final String getCvssAvailabilityRequirement(Issue.getCvssAvailabilityRequirement466,12601
+    public final void setCvssAvailabilityRequirement(Issue.setCvssAvailabilityRequirement475,12889
+    public final String getCvssIsManual(Issue.getCvssIsManual484,13173
+    public final void setCvssIsManual(Issue.setCvssIsManual493,13386
+
+main/java/com/jwmoon/appscan/model/IssueUrl.java,1946
+public class IssueUrl 19,360
+    private String id;IssueUrl.id20,384
+    private String fileName;IssueUrl.fileName21,407
+    private String parentId;IssueUrl.parentId22,436
+    private String nIssues;IssueUrl.nIssues23,465
+    private String nRemediations;IssueUrl.nRemediations24,494
+    private String nVariants;IssueUrl.nVariants25,528
+    private String viewType;IssueUrl.viewType26,558
+    private String nVisitedLinks;IssueUrl.nVisitedLinks27,587
+    private String nFailedRequests;IssueUrl.nFailedRequests28,622
+    private String fullPath;IssueUrl.fullPath29,658
+    public final String getId(IssueUrl.getId36,770
+    public final void setId(IssueUrl.setId45,933
+    public final String getFileName(IssueUrl.getFileName54,1109
+    public final void setFileName(IssueUrl.setFileName63,1302
+    public final String getParentId(IssueUrl.getParentId72,1502
+    public final void setParentId(IssueUrl.setParentId81,1695
+    public final String getNIssues(IssueUrl.getNIssues90,1893
+    public final void setNIssues(IssueUrl.setNIssues99,2081
+    public final String getNRemediations(IssueUrl.getNRemediations108,2287
+    public final void setNRemediations(IssueUrl.setNRemediations117,2505
+    public final String getNVariants(IssueUrl.getNVariants126,2727
+    public final void setNVariants(IssueUrl.setNVariants135,2925
+    public final String getViewType(IssueUrl.getViewType144,3129
+    public final void setViewType(IssueUrl.setViewType153,3322
+    public final String getNVisitedLinks(IssueUrl.getNVisitedLinks162,3532
+    public final void setNVisitedLinks(IssueUrl.setNVisitedLinks171,3750
+    public final String getNFailedRequests(IssueUrl.getNFailedRequests180,3984
+    public final void setNFailedRequests(IssueUrl.setNFailedRequests189,4212
+    public final String getFullPath(IssueUrl.getFullPath198,4440
+    public final void setFullPath(IssueUrl.setFullPath207,4633
+
+main/java/com/jwmoon/appscan/model/Vulnerability.java,1567
+public class Vulnerability 19,370
+	private String id;Vulnerability.id21,400
+	private String vulnerabilityId;Vulnerability.vulnerabilityId22,421
+	private String repEntityId;Vulnerability.repEntityId23,455
+	private String vulnTypeId;Vulnerability.vulnTypeId24,485
+	private String testUrl;Vulnerability.testUrl25,514
+	private String normalizedTestUrl;Vulnerability.normalizedTestUrl26,540
+	private String sourceFlags;Vulnerability.sourceFlags27,576
+	private String isInternal;Vulnerability.isInternal28,606
+	public String getId(Vulnerability.getId30,636
+	public void setId(Vulnerability.setId33,677
+	public String getVulnerabilityId(Vulnerability.getVulnerabilityId36,728
+	public void setVulnerabilityId(Vulnerability.setVulnerabilityId39,795
+	public String getRepEntityId(Vulnerability.getRepEntityId42,898
+	public void setRepEntityId(Vulnerability.setRepEntityId45,957
+	public String getVulnTypeId(Vulnerability.getVulnTypeId48,1044
+	public void setVulnTypeId(Vulnerability.setVulnTypeId51,1101
+	public String getTestUrl(Vulnerability.getTestUrl54,1184
+	public void setTestUrl(Vulnerability.setTestUrl57,1235
+	public String getNormalizedTestUrl(Vulnerability.getNormalizedTestUrl60,1306
+	public void setNormalizedTestUrl(Vulnerability.setNormalizedTestUrl63,1377
+	public String getSourceFlags(Vulnerability.getSourceFlags66,1488
+	public void setSourceFlags(Vulnerability.setSourceFlags69,1547
+	public String getIsInternal(Vulnerability.getIsInternal72,1634
+	public void setIsInternal(Vulnerability.setIsInternal75,1691
+
+main/java/com/jwmoon/appscan/model/IssueType.java,2074
+public class IssueType 19,363
+	private String engineId;IssueType.engineId21,389
+	private String name;IssueType.name22,415
+	private String invasive;IssueType.invasive23,437
+	private String severity;IssueType.severity24,463
+	private String threatClass;IssueType.threatClass25,489
+	private String threatClassReference;IssueType.threatClassReference26,518
+	private String remediationTypeId;IssueType.remediationTypeId27,557
+	private String testType;IssueType.testType28,592
+	private String shortName;IssueType.shortName29,618
+	private String id;IssueType.id30,646
+	private String cveId;IssueType.cveId31,666
+	private String cweId;IssueType.cweId32,690
+	public String getEngineId(IssueType.getEngineId34,715
+	public void setEngineId(IssueType.setEngineId37,768
+	public String getName(IssueType.getName40,843
+	public void setName(IssueType.setName43,888
+	public String getInvasive(IssueType.getInvasive46,947
+	public void setInvasive(IssueType.setInvasive49,1000
+	public String getSeverity(IssueType.getSeverity52,1075
+	public void setSeverity(IssueType.setSeverity55,1128
+	public String getThreatClass(IssueType.getThreatClass58,1203
+	public void setThreatClass(IssueType.setThreatClass61,1262
+	public String getThreatClassReference(IssueType.getThreatClassReference64,1349
+	public void setThreatClassReference(IssueType.setThreatClassReference67,1426
+	public String getRemediationTypeId(IssueType.getRemediationTypeId70,1549
+	public void setRemediationTypeId(IssueType.setRemediationTypeId73,1620
+	public String getTestType(IssueType.getTestType76,1731
+	public void setTestType(IssueType.setTestType79,1784
+	public String getShortName(IssueType.getShortName82,1859
+	public void setShortName(IssueType.setShortName85,1914
+	public String getId(IssueType.getId88,1993
+	public void setId(IssueType.setId91,2034
+	public String getCveId(IssueType.getCveId94,2085
+	public void setCveId(IssueType.setCveId97,2132
+	public String getCweId(IssueType.getCweId100,2195
+	public void setCweId(IssueType.setCweId103,2242
+
+main/java/com/jwmoon/appscan/service/IssueUrlService.java,474
+public class IssueUrlService{IssueUrlService32,904
+    private static Logger log IssueUrlService.log34,943
+	IssueUrlMapper issueUrlMapper;IssueUrlService.issueUrlMapper37,1046
+	MessageSource messageSource;IssueUrlService.messageSource40,1091
+       public List<IssueUrl> getIssueUrls(IssueUrlService.getIssueUrls42,1123
+    public List<IssueUrlService.List46,1230
+    public List<Map<String, String>> getIssueUrlCounts(IssueUrlService.getIssueUrlCounts46,1230
+
+main/java/com/jwmoon/appscan/service/IssueService.java,586
+public class IssueService 39,1023
+	private static Logger log IssueService.log41,1052
+	IssueMapper issueMapper;IssueService.issueMapper44,1152
+	MessageSource messageSource;IssueService.messageSource47,1191
+	public @ResponseBody List<Issue> selectIssues(IssueService.selectIssues49,1223
+	public List<IssueService.List53,1315
+	public List<Map<String, String>> getIssueCountBySeverity(IssueService.getIssueCountBySeverity53,1315
+	public List<IssueService.List106,3304
+	public List<Map<String, String>> getIssueCountByIssueType(IssueService.getIssueCountByIssueType106,3304
+
+main/java/com/jwmoon/appscan/mapper/IssueTypeMapper.java,41
+public interface IssueTypeMapper 11,189
+
+main/java/com/jwmoon/appscan/mapper/VulnerabilityMapper.java,84
+public interface VulnerabilityMapper 12,236
+	List<VulnerabilityMapper.List16,325
+
+main/java/com/jwmoon/appscan/mapper/IssueMapper.java,99
+public interface IssueMapper 12,228
+	List<IssueMapper.List21,401
+	List<IssueMapper.List23,458
+
+main/java/com/jwmoon/appscan/mapper/IssueUrlMapper.java,40
+public interface IssueUrlMapper 13,270
+
+main/java/com/jwmoon/appscan/util/CodeTranslator.java,107
+public class CodeTranslator 19,371
+	public static String queryToModel(CodeTranslator.queryToModel21,402
+
+main/java/com/jwmoon/appscan/util/CommonUtil.java,617
+public class CommonUtil 24,594
+	public static final String DEFAULT_PATTERN_YYYYMMDD CommonUtil.DEFAULT_PATTERN_YYYYMMDD26,621
+	private CommonUtil(CommonUtil.CommonUtil31,707
+	public static Locale getLocalFromRequest(CommonUtil.getLocalFromRequest42,944
+	public static String getLocaleMessage(CommonUtil.getLocaleMessage55,1290
+	public static String getLocaleMessage(CommonUtil.getLocaleMessage69,1781
+	public static String getLocaleMessage(CommonUtil.getLocaleMessage84,2140
+	public static String formatDate(CommonUtil.formatDate94,2391
+	public static String formatDate(CommonUtil.formatDate105,2613
+
+main/java/com/jwmoon/appscan/controller/DefaultController.java,665
+public class DefaultController{DefaultController35,1271
+	private static Logger log DefaultController.log37,1308
+	IssueTypeMapper issueTypeMapper;DefaultController.issueTypeMapper40,1410
+	AppscanDBContextHolder appscanDBContextHolder;DefaultController.appscanDBContextHolder46,1516
+	@RequestMapping(DefaultController.@RequestMapping52,1669
+	public @ResponseBody List<IssueType> getJsonTest(DefaultController.getJsonTest65,2059
+	public @ResponseBody List<Map> getThreatCategoryCount(DefaultController.getThreatCategoryCount72,2237
+	@RequestMapping(DefaultController.@RequestMapping100,3116
+	@RequestMapping(DefaultController.@RequestMapping106,3361
+
+main/java/com/jwmoon/appscan/controller/VulnerabilityController.java,574
+public class VulnerabilityController 34,880
+	VulnerabilityMapper vulnerabilityMapper;VulnerabilityController.vulnerabilityMapper37,933
+	public @ResponseBody List<Vulnerability> getVulnerabilityTypes(VulnerabilityController.getVulnerabilityTypes41,1007
+	public @ResponseBody List<Map<VulnerabilityController.Map46,1173
+	public @ResponseBody List<Map<String, String>> getVulnerableUrls(VulnerabilityController.getVulnerableUrls46,1173
+	@RequestMapping(VulnerabilityController.@RequestMapping50,1300
+	@RequestMapping(VulnerabilityController.@RequestMapping55,1468
+
+main/java/com/jwmoon/appscan/controller/IssueTypeController.java,275
+public class IssueTypeController 34,890
+	IssueTypeMapper issueTypeMapper;IssueTypeController.issueTypeMapper37,939
+	public @ResponseBody List<IssueType> getIssueTypes(IssueTypeController.getIssueTypes41,1005
+	@RequestMapping(IssueTypeController.@RequestMapping45,1110
+
+main/java/com/jwmoon/appscan/controller/IssueController.java,1165
+public class IssueController 49,1454
+	private static Logger log IssueController.log52,1488
+	IssueService issueService;IssueController.issueService55,1588
+    IssueUrlService issueUrlService;IssueController.issueUrlService58,1632
+    ProjectService projectService;IssueController.projectService61,1689
+	AppscanDBContextHolder appscanDBContextHolder;IssueController.appscanDBContextHolder64,1744
+	public @ResponseBody List<Issue> getIssues(IssueController.getIssues67,1822
+	@RequestMapping(IssueController.@RequestMapping71,1912
+	public @ResponseBody List<Map<IssueController.Map90,2424
+	public @ResponseBody List<Map<String, String>> getIssueCountBySeverity(IssueController.getIssueCountBySeverity90,2424
+	public @ResponseBody List<Map<IssueController.Map97,2692
+	public @ResponseBody List<Map<String, String>> getIssueCountByIssueType(IssueController.getIssueCountByIssueType97,2692
+	public @ResponseBody List<IssueUrl> getIssueUrls(IssueController.getIssueUrls104,2944
+	public @ResponseBody List<Map<IssueController.Map111,3169
+	public @ResponseBody List<Map<String,String>> getIssueUrlCounts(IssueController.getIssueUrlCounts111,3169
+
+main/java/com/jwmoon/framework/project/Project.java,1445
+public class Project 24,450
+	private Integer projectId;Project.projectId26,474
+	private String projectName;Project.projectName27,502
+	private Date endDate;Project.endDate31,636
+	private String dbPath;Project.dbPath32,659
+	private String customerId;Project.customerId33,683
+	private String customerName;Project.customerName34,711
+	private String projectUrl;Project.projectUrl35,741
+	private String note;Project.note36,770
+	public Integer getProjectId(Project.getProjectId38,804
+	public void setProjectId(Project.setProjectId41,860
+	public String getProjectName(Project.getProjectName44,940
+	public void setProjectName(Project.setProjectName47,999
+	public Date getStartDate(Project.getStartDate50,1086
+	public void setStartDate(Project.setStartDate53,1139
+	public Date getEndDate(Project.getEndDate56,1216
+	public void setEndDate(Project.setEndDate59,1265
+	public String getDbPath(Project.getDbPath62,1334
+	public void setDbPath(Project.setDbPath65,1383
+	public String getCustomerId(Project.getCustomerId68,1450
+	public void setCustomerId(Project.setCustomerId71,1507
+	public String getCustomerName(Project.getCustomerName74,1590
+	public void setCustomerName(Project.setCustomerName77,1651
+	public String getProjectUrl(Project.getProjectUrl80,1742
+	public void setProjectUrl(Project.setProjectUrl83,1799
+	public String getNote(Project.getNote86,1882
+	public void setNote(Project.setNote89,1927
+
+main/java/com/jwmoon/framework/project/ProjectMapper.java,38
+public interface ProjectMapper 8,126
+
+main/java/com/jwmoon/framework/project/ProjectController.java,439
+public class ProjectController 34,910
+	private static Logger log ProjectController.log37,946
+	ProjectService projectService;ProjectController.projectService40,1048
+	@RequestMapping(ProjectController.@RequestMapping42,1085
+	public @ResponseBody List<Project> getProjects(ProjectController.getProjects50,1323
+	@RequestMapping(ProjectController.@RequestMapping54,1421
+    @RequestMapping(ProjectController.@RequestMapping65,1787
+
+main/java/com/jwmoon/framework/project/ProjectService.java,305
+public class ProjectService 28,689
+	private static Logger log ProjectService.log30,720
+	ProjectMapper projectMapper;ProjectService.projectMapper33,819
+	public List<Project> selectProjects(ProjectService.selectProjects40,902
+	public Project getProjectDetail(ProjectService.getProjectDetail45,1048
+
+main/java/com/jwmoon/framework/sql/QueryResolver.java,39
+public interface QueryResolver 20,379
+
+main/java/com/jwmoon/framework/sql/MyBatisQueryResolver.java,260
+public class MyBatisQueryResolver 24,617
+	SqlSessionFactory sqlSessionFactory;MyBatisQueryResolver.sqlSessionFactory27,692
+	public String getQuery(MyBatisQueryResolver.getQuery29,732
+	 private String resolveQuery(MyBatisQueryResolver.resolveQuery38,955
+
+main/java/com/jwmoon/framework/db/IAppscanDBContextHolder.java,49
+public interface IAppscanDBContextHolder 19,389
+
+main/java/com/jwmoon/framework/db/AppscanDBContextHolder.java,408
+public class AppscanDBContextHolder 28,680
+	private static final long serialVersionUID AppscanDBContextHolder.serialVersionUID30,768
+	private AppscanDBContext appscanDBContext AppscanDBContextHolder.appscanDBContext32,838
+	public AppscanDBContext getAppscanDBContext(AppscanDBContextHolder.getAppscanDBContext34,920
+	public void setAppscanDBContext(AppscanDBContextHolder.setAppscanDBContext38,1000
+
+main/java/com/jwmoon/framework/db/AppscanDBContext.java,1005
+public enum AppscanDBContext 19,368
+	JINROH(AppscanDBContext.JINROH21,400
+	ELSWORD(AppscanDBContext.ELSWORD22,412
+	private AppscanDBContext.private24,427
+	private final AppscanDBContext.final24,427
+	private final int AppscanDBContext.int24,427
+	private final int value;AppscanDBContext.value24,427
+	AppscanDBContext(AppscanDBContext.AppscanDBContext26,455
+	AppscanDBContext(int AppscanDBContext.int26,455
+	AppscanDBContext(int value)AppscanDBContext.value26,455
+	public AppscanDBContext.public30,512
+	public int AppscanDBContext.int30,512
+	public int intValue(AppscanDBContext.intValue30,512
+	public AppscanDBContext.public35,559
+	public static AppscanDBContext.static35,559
+	public static AppscanDBContext AppscanDBContext.AppscanDBContext35,559
+	public static AppscanDBContext valueOf(AppscanDBContext.valueOf35,559
+	public static AppscanDBContext valueOf(int AppscanDBContext.int35,559
+	public static AppscanDBContext valueOf(int value)AppscanDBContext.value35,559
+
+main/java/com/jwmoon/framework/db/AppscanDBRoutingDataSource.java,326
+public class AppscanDBRoutingDataSource 29,709
+	private static Logger log AppscanDBRoutingDataSource.log31,785
+	AppscanDBContextHolder appscanDBContextHolder;AppscanDBRoutingDataSource.appscanDBContextHolder42,1143
+	protected Object determineCurrentLookupKey(AppscanDBRoutingDataSource.determineCurrentLookupKey52,1360
+
+test/java/com/jwmoon/appscan/mapper/VulnerabilityMapperTest.java,204
+public class VulnerabilityMapperTest 34,1001
+	VulnerabilityMapper vulnerabilityMapper;VulnerabilityMapperTest.vulnerabilityMapper37,1053
+	public void loadTest(VulnerabilityMapperTest.loadTest40,1104
+
+test/java/com/jwmoon/framework/DataSourceTest.java,481
+public class DataSourceTest 48,1503
+	private static final Logger log DataSourceTest.log50,1534
+	SqlSessionFactoryBean sqlSessionFactory;DataSourceTest.sqlSessionFactory59,1714
+	IssueMapper issueMapper;DataSourceTest.issueMapper62,1770
+	AppscanDBRoutingDataSource dataSource;DataSourceTest.dataSource65,1810
+	public void changeDataSourceURLTest(DataSourceTest.changeDataSourceURLTest83,2287
+	public void changeDataSourceTest(DataSourceTest.changeDataSourceTest135,5411
+
+test/java/com/jwmoon/framework/ConversionTest.java,241
+public class ConversionTest 47,1482
+	private static final Logger log ConversionTest.log49,1513
+	ProjectService projectService;ConversionTest.projectService52,1602
+	public void dateFormatterTest(ConversionTest.dateFormatterTest62,1861
+
+test/java/com/jwmoon/framework/sql/MyBatisQueryResolverTest.java,505
+public class MyBatisQueryResolverTest 37,1109
+	private static final Logger log MyBatisQueryResolverTest.log39,1150
+	private SqlSessionFactory sqlSessionFactory;MyBatisQueryResolverTest.sqlSessionFactory42,1249
+	private QueryResolver queryResolver;MyBatisQueryResolverTest.queryResolver45,1309
+	public void loadTest(MyBatisQueryResolverTest.loadTest48,1356
+	public void getQueryTest(MyBatisQueryResolverTest.getQueryTest54,1495
+	public void queryTest(MyBatisQueryResolverTest.queryTest60,1657
+
+test/java/com/jwmoon/framework/MessageSourceTest.java,294
+public class MessageSourceTest 40,1167
+	private static final Logger log MessageSourceTest.log42,1201
+	MessageSource messageSource;MessageSourceTest.messageSource45,1293
+	public void loadTest(MessageSourceTest.loadTest48,1332
+	public void localeTest(MessageSourceTest.localeTest53,1418

@@ -37,7 +37,8 @@
 	
     <select id="selectIssues" resultType="Issue" >  
 		<include refid="selectDefaultIssues" />
-		<if test="serviceType == 'DBMS'">
+		<if test="severity == '0'">
+		  
 		</if>
     </select>
     
