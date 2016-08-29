@@ -29,11 +29,12 @@
 		<enabled>true</enabled>
 	  </releases>
 	</repository>
+	<!--
 	<repository>
 	  <id>second</id>
 	  <url>http://java.sun.com/products/jms/</url>
 	</repository>
-
+	-->
   </repositories>
 
   <dependencies>
@@ -103,12 +104,13 @@
 	</dependency>
 	<!--Java message service -->
 	<!-- https://mvnrepository.com/artifact/javax.jms/jms -->	
+	<!--
     <dependency>
       <groupId>javax.jms</groupId>
       <artifactId>jms</artifactId>
       <version>1.1</version>
     </dependency>
-
+-->
 	<!--**************************************************************************-->
 	<!--****************************  AOP  ***************************************-->
 	<!--**************************************************************************-->
@@ -217,6 +219,12 @@
       <groupId>org.firebirdsql.jdbc</groupId>
       <artifactId>jaybird</artifactId>
       <version>2.1.6</version>
+	  <exclusions>
+	  <exclusion>
+		<groupId>log4j</groupId>
+		<artifactId>log4j</artifactId>
+	  </exclusion>
+	  </exclusions>
 	</dependency>
 	<!-- Hibernate validator -->
 	<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-validator -->
@@ -329,9 +337,27 @@
 	<!-- Log4j-->
 	<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-api -->
 	<dependency>
-      <groupId>org.apache.logging.log4j</groupId>
+      <groupId>log4j</groupId>
       <artifactId>log4j</artifactId>
       <version>1.2.16</version>
+	  <exclusions>
+                <exclusion>
+                    <groupId>javax.mail</groupId>
+                    <artifactId>mail</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>javax.jms</groupId>
+                    <artifactId>jms</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.sun.jdmk</groupId>
+                    <artifactId>jmxtools</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.sun.jmx</groupId>
+                    <artifactId>jmxri</artifactId>
+                </exclusion>
+      </exclusions>
 	</dependency>
 	<!-- Slf4j Logging Framework-->
 	<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
@@ -351,7 +377,7 @@
       <version>1.6.0</version>
 	  <scope>test</scope>
 	</dependency>
--->
+	-->
 	<!--**************************************************************************-->
 	<!--*************************  SECURITY ***************************************-->
 	<!--**************************************************************************-->
@@ -400,24 +426,27 @@
 
 	<!-- JavaMail API to manage MIME data-->
 	<!-- https://mvnrepository.com/artifact/javax.activation/activation -->
+	<!--
 	<dependency>
       <groupId>javax.activation</groupId>
       <artifactId>activation</artifactId>
       <version>1.1.1</version>
-	</dependency>
+	</dependency>-->
 	<!-- https://mvnrepository.com/artifact/javax.mail/mail -->
+	<!--
 	<dependency>
       <groupId>javax.mail</groupId>
       <artifactId>mail</artifactId>
       <version>1.4</version>
-	</dependency>
+	</dependency>-->
 	<!-- RSS Feed Library-->
 	<!-- https://mvnrepository.com/artifact/rome/rome -->
+	<!--
 	<dependency>
       <groupId>rome</groupId>
       <artifactId>rome</artifactId>
       <version>1.0</version>
 	</dependency>
-
+	-->
   </dependencies>
 </project>

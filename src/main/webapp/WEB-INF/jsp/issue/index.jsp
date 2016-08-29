@@ -16,7 +16,7 @@ $(document).ready(function(){
 		
 		$.ajax({
 			method : "POST",
-			url : "/AppScanResult/changeDBContext",
+			url : "<%=request.getContextPath()%>/changeDBContext",
 			data : {"dbNum" : $("#db-select option:selected").val()}
 		}).done(function(){
 			//location.reload();	
@@ -34,7 +34,7 @@ $(document).ready(function(){
          "serverSide": true,
     	 "ajax" : "http://10.248.90.234:8080/AppScanResult/issue/getIssueUrls"
      }); */
-     $.getJSON("/AppScanResult/issue/getIssueUrls", 
+     $.getJSON("<%=request.getContextPath()%>/issue/getIssueUrls", 
     		 function(json){
     	 //$("#table1")
     	 var id = "#table1";

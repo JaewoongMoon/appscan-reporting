@@ -78,7 +78,7 @@
 	</bean>
 	
 	<bean id="dataSource2" parent="parentDataSource">
-		<property name="url" value="jdbc:firebirdsql:localhost/3050:D:/resultdb/elsword/elsword-RESULTSDB.FDB?encoding=UTF-8"/>
+		<property name="url" value="jdbc:firebirdsql:localhost/3050:/home/jwmoon/resultdb/elsword/elsword-RESULTSDB.FDB?encoding=UTF-8"/>
 	</bean>
 	
 	<!-- DataSource 라우팅 용 -->

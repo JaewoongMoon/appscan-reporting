@@ -30,7 +30,7 @@
 	
 	<logger name="access.filter" additivity="false">
 		<level value="DEBUG"/>
-		<appender-ref ref="access"/>
+		<appender-ref ref="file"/>
 	</logger>
 	<logger name="org.quartz.core">
 		<level value="DEBUG"/>
@@ -39,9 +39,10 @@
 		<level value="DEBUG" />
 	</logger>
 	<root>
-		<level value="ERROR" />
+		<level value="DEBUG" />
 		<appender-ref ref="console" />
 		<appender-ref ref="file" />
 		<!-- <appender-ref ref="filelog" /> -->
 	</root>
 </log4j:configuration>
+
