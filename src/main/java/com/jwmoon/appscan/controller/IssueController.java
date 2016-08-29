@@ -111,6 +111,7 @@ public class IssueController {
 	public @ResponseBody List<Map<String,String>> getIssueUrlCounts(HttpServletRequest request){
 		Locale locale = RequestContextUtils.getLocale(request);
 		return issueUrlService.getIssueUrlCounts(locale);
+
 	}  
 	
 }
