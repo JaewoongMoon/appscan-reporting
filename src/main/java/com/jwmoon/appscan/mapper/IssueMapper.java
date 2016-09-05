@@ -20,5 +20,5 @@ public interface IssueMapper {
 	
 	List<Map <String, String>> getIssueCountBySeverity();
 	
-	List<Map <String, String>> getIssueCountByIssueType();
+	List<Map <String, String>> getIssueCountByIssueType(Issue issue);
 }

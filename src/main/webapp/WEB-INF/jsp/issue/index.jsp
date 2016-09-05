@@ -11,6 +11,7 @@
 %>
 <script type="text/javascript">
 $(document).ready(function(){
+	 // select db context
 	$("#db-select").change(function(){
 		console.log($("#db-select option:selected").val());
 		
@@ -27,13 +28,7 @@ $(document).ready(function(){
 	drawChart1();
 	drawChart2();
     drawChart3();
-     //$("table.highchart").highchartTable();
-	 /*     
-     $("#table1").DataTable({
-    	 "processing": true,
-         "serverSide": true,
-    	 "ajax" : "http://10.248.90.234:8080/AppScanResult/issue/getIssueUrls"
-     }); */
+  
      $.getJSON("<%=request.getContextPath()%>/issue/getIssueUrls", 
     		 function(json){
     	 //$("#table1")
@@ -45,6 +40,19 @@ $(document).ready(function(){
     	 });
     	 $(id).append('</tbody>');
      });
+
+
+
+	 $.getJSON("<%=request.getContextPath()%>/issue/getIssueCountByIssueTypeAndSeverity?severity=1", 
+    		   function(json){
+
+    			   var id = "#table-severity-1";
+    			   $(id).append('<tbody>');
+    			   $.each( json, function( i, item ) {
+    				   $(id).append('<tr><td></td>' + '<td>' + item.NAME + '</td>' + '<td>' + item.CNT + '</td>' + '</tr>');
+    			   });
+    			   $(id).append('</tbody>');
+			   });
      
 })
 
@@ -204,6 +212,16 @@ var drawChart2 = function (){
             </tr>
         </thead>
     </table>
+
+	<table id="table-severity-1" class="table">
+		<thead>
+			<tr>
+                <th>URL</th>
+                <th><spring:message code="label.issue.name"/></th>
+                <th><spring:message code="label.issueType.name"/></th>
+			</tr>
+		</thead>
+	</table>
        <!-- i18n 테스트 : 추후 필요시 사용   
 		<div class="chart1">
 			<ul>

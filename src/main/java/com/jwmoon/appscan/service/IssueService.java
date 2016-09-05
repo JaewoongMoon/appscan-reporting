@@ -103,8 +103,8 @@ public class IssueService {
 		return result;
 	}
 	
-	public List<Map<String, String>> getIssueCountByIssueType(){
-		return issueMapper.getIssueCountByIssueType();
+	public List<Map<String, String>> getIssueCountByIssueType(Issue issue){
+		return issueMapper.getIssueCountByIssueType(issue);
 	}
 	
 	

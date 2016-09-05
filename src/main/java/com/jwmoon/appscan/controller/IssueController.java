@@ -97,8 +97,20 @@ public class IssueController {
 	public @ResponseBody List<Map<String, String>> getIssueCountByIssueType(HttpServletRequest request){
 		Locale locale = RequestContextUtils.getLocale(request);
 		
-		return issueService.getIssueCountByIssueType();
+		return issueService.getIssueCountByIssueType(new Issue());
 	}
+
+	@RequestMapping("/getIssueCountByIssueTypeAndSeverity")
+	public @ResponseBody List<Map<String, String>> getIssueCountByIssueTypeAndSeverity(HttpServletRequest request){
+		Locale locale = RequestContextUtils.getLocale(request);
+		String severity = request.getParameter("severity");
+		
+		Issue issue = new Issue();
+		issue.setSeverity(severity);
+		
+		return issueService.getIssueCountByIssueType(issue);
+	}
+
 	
 	@RequestMapping("/getIssueUrls")
 	public @ResponseBody List<IssueUrl> getIssueUrls(HttpServletRequest request){
@@ -113,5 +125,7 @@ public class IssueController {
 		return issueUrlService.getIssueUrlCounts(locale);
 
 	}  
+
+	
 	
 }

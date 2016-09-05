@@ -35,7 +35,7 @@
 	</sql>
 
 	
-    <select id="selectIssues" resultType="Issue" >  
+    <select id="selectIssues" resultType="Issue" parameterType="Issue" >  
 		<include refid="selectDefaultIssues" />
 		<if test="severity == '0'">
 		  
@@ -51,7 +51,7 @@
 	group by severity
     </select>
     
-    <select id="getIssueCountByIssueType" resultType="Map" >
+    <select id="getIssueCountByIssueType" resultType="Map" parameterType="Issue">
 	select a.issueTypeID, 
 		   a.CNT, 
 		   b.NAME
@@ -59,6 +59,9 @@
 	    (SELECT a.issueTypeID, count(a.ISSUETYPEID) as CNT
 	    FROM (
             <include refid="selectDefaultIssues" />
+			<if test="severity != null">
+			  and a.severity = #{severity}
+			</if>
               )a
 	    group by a.issueTypeID
 	    )a,
